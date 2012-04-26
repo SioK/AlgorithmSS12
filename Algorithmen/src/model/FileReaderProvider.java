@@ -3,49 +3,45 @@ package model;
 import interfaces.IDataProvider;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileReaderProvider implements IDataProvider<Integer> {
 
-	private static ArrayList<Integer> values = new ArrayList<Integer>();
+  private final ArrayList<Integer> valuesList = new ArrayList<Integer>();
 
-	public FileReaderProvider(String dat) {
+  public FileReaderProvider(String file) {
+    try {
+      FileReader fr = new FileReader(file);
+      BufferedReader br = new BufferedReader(fr);
 
-		FileInputStream fis = null;
-		try {
-			fis = new FileInputStream(dat);
-		} catch (Exception e) {
-			System.out.println("'dat' konnte nicht geoeffnet werden");
+      String zeile = "";
+      while (true) {
+        zeile = br.readLine();
+        if (zeile == null) {
+          break;
+        }
+        System.out.println(zeile);
+        this.valuesList.add(Integer.valueOf(zeile));
+      }
+      br.close();
+      fr.close();
+    } catch (IOException ioe) {
+      ioe.printStackTrace();
+    }
 
-		}
-		try {
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader br = new BufferedReader(isr);
+  }
 
-			String einZeile;
-			einZeile = br.readLine();
-			int anz = new Integer(einZeile);
+  @Override
+  public String toString() {
+    return "FileReaderProvider [valuesList=" + valuesList + "]";
+  }
 
-			for (int i = 0; i < anz; i++) {
-				einZeile = br.readLine();
+  @Override
+  public List<Integer> getData() {
+    return valuesList;
+  }
 
-				if (einZeile == null)
-					break; // Ende der Datei erreicht
-				System.out.println(einZeile);
-				int j = new Integer(einZeile);
-				values.set(i, j);
-			}
-		} catch (Exception e) {
-			System.out.println("Einlesen nicht erfolgreich");
-		}
-
-	}
-
-	@Override
-	public List<Integer> getData() {
-		return values;
-	}
 }
