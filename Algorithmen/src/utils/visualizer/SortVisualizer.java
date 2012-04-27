@@ -29,7 +29,6 @@ public class SortVisualizer {
 		frame.setTitle("Sort Visualizer of: "
 				+ canvas.getName() + "  Number of Elements: "+ provider.getSize() );
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 		frame.add(canvas);
 		
 	
@@ -39,7 +38,6 @@ public class SortVisualizer {
 	public void show(boolean b) {
 		if (frame != null && canvas != null) {
 			canvas.setVisible(b);
-			canvas.setBackground(new Color(0));
 			frame.setVisible(b);
 			canvas.sort();
 		}

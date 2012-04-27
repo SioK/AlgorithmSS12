@@ -23,7 +23,6 @@ public class FileReaderProvider implements IDataProvider<Integer> {
 				if (zeile == null) {
 					break;
 				}
-				System.out.println(zeile);
 				this.valuesList.add(Integer.valueOf(zeile));
 			}
 			br.close();

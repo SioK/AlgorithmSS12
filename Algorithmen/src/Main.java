@@ -4,6 +4,7 @@ import interfaces.ISorter;
 import java.util.List;
 import java.util.ArrayList;
 
+import sorter.MergeSort;
 import sorter.QuickSort;
 import sorter.SelectionSort;
 import utils.RunTimeMeasure;
@@ -31,7 +32,7 @@ public class Main {
 		//intSorter.add(new MergeSort<Integer>());
 		
 		IDataProvider<Integer> intProvider = new RandomIntArray(100, 200);
-		RunTimeMeasure<Integer> intRM = new RunTimeMeasure<Integer>(intSorter, intProvider, 30);
+		RunTimeMeasure<Integer> intRM = new RunTimeMeasure<Integer>(intSorter, intProvider, 1);
 
 		intRM.execute();
 		
@@ -46,7 +47,7 @@ public class Main {
 		
 		// Runtime Measure File(Integer)
 		
-		IDataProvider<Integer> fileProvider = new FileReaderProvider("");
+		IDataProvider<Integer> fileProvider = new FileReaderProvider("/home/siok/workspace/Repos/AlgorithmSS12/Algorithmen/src/assets/Rand10_1");
 		RunTimeMeasure<Integer> fileRM = new RunTimeMeasure<Integer>(intSorter,fileProvider, 1);
 		fileRM.execute();
 		
@@ -56,7 +57,7 @@ public class Main {
 		SelectionSortCanvas canvasSelection = new SelectionSortCanvas();
 		
 		SortVisualizer visual = new SortVisualizer();
-		visual.create(intProvider, canvasSelection, 300);
+		visual.create(intProvider, canvasSelection, 30);
 		visual.show(true);
 	}
 }

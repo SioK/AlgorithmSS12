@@ -5,7 +5,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.List;
 
-public abstract class AbstractSorterCanvas extends Canvas {
+
+import javax.swing.JComponent;
+
+public abstract class AbstractSorterCanvas extends JComponent {
 
 	/**
 	 * 
@@ -34,13 +37,9 @@ public abstract class AbstractSorterCanvas extends Canvas {
 		g.setColor(Color.red);
 		indexOne = indexOne*10;
 		indexTwo = indexTwo*10;
-		g.drawLine(indexOne, this.getHeight(), indexOne, this.getHeight() - one);
-		g.drawLine(indexOne + 1, this.getWidth(), indexOne + 1, this.getHeight() - one);
-		g.drawLine(indexOne + 2, this.getWidth(), indexOne + 2, this.getHeight() - one);
 
-		g.drawLine(indexTwo, this.getHeight(), indexTwo, this.getHeight() - two);
-		g.drawLine(indexTwo + 1, this.getWidth(), indexTwo + 1, this.getHeight() - two);
-		g.drawLine(indexTwo + 2, this.getWidth(), indexTwo + 2, this.getHeight() - two);
+		drawElement(indexOne,one, Color.red,g);
+		drawElement(indexTwo,two, Color.red,g);
 
 		try {
 			Thread.sleep(time);
@@ -50,17 +49,23 @@ public abstract class AbstractSorterCanvas extends Canvas {
 		repaint();
 	}
 
-	public void paint(Graphics g) {
+	public void paintComponent(Graphics g) {
 		int index = 0;
+		g.setColor(Color.black);
+		g.fillRect(0, 0, getWidth(), getHeight());
 		for (Integer element : comparables) {
-
-			g.setColor(new Color(255));
-			g.drawLine(index, this.getHeight(), index, this.getHeight()- element);
-			g.drawLine(index + 1, this.getWidth(), index + 1, this.getHeight()- element);
-			g.drawLine(index + 2, this.getWidth(), index + 2, this.getHeight()- element);
+			drawElement(index, element, Color.blue,g);
 			index += 10;
 		}
+		
 
+	}
+	
+	public void drawElement(int index, int value, Color c, Graphics g) {
+		g.setColor(c);
+		g.drawLine(index, this.getHeight(), index, this.getHeight()- value);
+		g.drawLine(index + 1, this.getWidth(), index + 1, this.getHeight()- value);
+		g.drawLine(index + 2, this.getWidth(), index + 2, this.getHeight()- value);
 	}
 
 	public void setData(List<Integer> comparables) {

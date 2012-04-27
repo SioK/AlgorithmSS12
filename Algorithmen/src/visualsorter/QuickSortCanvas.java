@@ -72,13 +72,8 @@ public class QuickSortCanvas extends AbstractSorterCanvas{
 
 		Graphics g = this.getGraphics();
 		g.setColor(Color.yellow);
-		g.drawLine(left, this.getHeight(), left, this.getHeight() - leftvalue);
-		g.drawLine(left + 1, this.getWidth(), left + 1, this.getHeight() - leftvalue);
-		g.drawLine(left + 2, this.getWidth(), left + 2, this.getHeight() - leftvalue);
-		
-		g.drawLine(right, this.getHeight(), right, this.getHeight() - rightvalue);
-		g.drawLine(right + 1, this.getWidth(), right + 1, this.getHeight() - rightvalue);
-		g.drawLine(right + 2, this.getWidth(), right + 2, this.getHeight() - rightvalue);
+		drawElement(left, leftvalue, Color.yellow,g);
+		drawElement(right, rightvalue, Color.yellow,g);
 		
 		try {
 			Thread.sleep(500);
