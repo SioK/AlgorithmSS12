@@ -4,10 +4,13 @@ import interfaces.ISorter;
 import java.util.List;
 import java.util.ArrayList;
 
-import sorter.MergeSort;
 import sorter.QuickSort;
 import sorter.SelectionSort;
 import utils.RunTimeMeasure;
+import utils.visualizer.SortVisualizer;
+import visualsorter.QuickSortCanvas;
+import visualsorter.SelectionSortCanvas;
+
 
 
 import model.FileReaderProvider;
@@ -25,10 +28,11 @@ public class Main {
 		List<ISorter<Integer>> intSorter = new ArrayList<ISorter<Integer>>();
 		intSorter.add(new SelectionSort<Integer>());
 		//intSorter.add(new QuickSort<Integer>());
-		intSorter.add(new MergeSort<Integer>());
+		//intSorter.add(new MergeSort<Integer>());
 		
-		IDataProvider<Integer> intProvider = new RandomIntArray(30, 30);
+		IDataProvider<Integer> intProvider = new RandomIntArray(100, 200);
 		RunTimeMeasure<Integer> intRM = new RunTimeMeasure<Integer>(intSorter, intProvider, 30);
+
 		intRM.execute();
 		
 		// Runtime Measure Character
@@ -46,5 +50,13 @@ public class Main {
 		RunTimeMeasure<Integer> fileRM = new RunTimeMeasure<Integer>(intSorter,fileProvider, 1);
 		fileRM.execute();
 		
+		// Visualizer
+		
+		QuickSortCanvas canvasQuick = new QuickSortCanvas();
+		SelectionSortCanvas canvasSelection = new SelectionSortCanvas();
+		
+		SortVisualizer visual = new SortVisualizer();
+		visual.create(intProvider, canvasSelection, 300);
+		visual.show(true);
 	}
 }

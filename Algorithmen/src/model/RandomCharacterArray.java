@@ -26,4 +26,14 @@ public class RandomCharacterArray implements IDataProvider<Character>{
 		return arrListCharacter;
 	}
 
+	@Override
+	public int getSize() {
+		return size;
+	}
+
+	@Override
+	public int maxValueBound() {
+		return pool;
+	}
+
 }

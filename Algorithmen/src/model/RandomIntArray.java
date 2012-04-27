@@ -27,4 +27,14 @@ public class RandomIntArray implements IDataProvider<Integer>{
 		return arrListInteger;
 	}
 
+	@Override
+	public int getSize() {
+		return size;
+	}
+
+	@Override
+	public int maxValueBound() {
+		return pool;
+	}
+
 }

@@ -1,6 +1,6 @@
 package sorter;
 
-import utils.Tools;
+
 import interfaces.ISorter;
 
 public class HeapSort implements ISorter {
