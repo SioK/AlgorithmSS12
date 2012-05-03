@@ -53,7 +53,7 @@ public class Main {
     SelectionSortCanvas canvasSelection = new SelectionSortCanvas();
 
     SortVisualizer visual = new SortVisualizer();
-    visual.create(intProvider, canvasQuick, 100);
+    visual.create(intProvider, canvasQuick, 215);
     visual.show(true);
   }
 }

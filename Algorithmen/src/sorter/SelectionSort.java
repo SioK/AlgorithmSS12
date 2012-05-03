@@ -12,28 +12,26 @@ import interfaces.ISorter;
  * 
  * @author François Dubois <siokdub@gmail.com>
  * @author Sebastian Morkisch <semox78@gmail.com>
- *
- * @param <T> while T must have implemented the Comparable Interface
+ * 
+ * @param <T>
+ *            while T must have implemented the Comparable Interface
  */
 
 public class SelectionSort<T extends Comparable<T>> implements ISorter<T> {
 
-
 	/**
-	 * selection sort algorithm
+	 * sorts a list xD
 	 */
-
 	@Override
 	public void sort(List<T> comparables) {
-		// defines the required length for the following iteration
 		int numberOfElements = comparables.size();
 		int left = 0;
 		do {
 			int min = left;
 			for (int i = left + 1; i < numberOfElements; i++) {
-					if(comparables.get(i).compareTo(comparables.get(min)) <= 0) {
-						min = i;
-					}
+				if (comparables.get(i).compareTo(comparables.get(min)) <= 0) {
+					min = i;
+				}
 			}
 			if (min != left) {
 				// called the swap method Tool

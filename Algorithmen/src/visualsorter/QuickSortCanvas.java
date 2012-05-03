@@ -65,7 +65,7 @@ public class QuickSortCanvas extends AbstractSorterCanvas{
 	
 	private void drawListBounds(int left, int right) {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(215);
 		} catch (InterruptedException e) {
 			System.out.println("Thread Interuppted");
 		}
@@ -82,7 +82,7 @@ public class QuickSortCanvas extends AbstractSorterCanvas{
 		drawElement(right, rightvalue, Color.yellow,g);
 		
 		try {
-			Thread.sleep(500);
+			Thread.sleep(215);
 		} catch (InterruptedException e) {
 			System.out.println("Thread Interuppted");
 		}

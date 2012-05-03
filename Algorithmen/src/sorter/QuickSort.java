@@ -56,20 +56,21 @@ public class QuickSort<T extends Comparable<T>> implements ISorter<T> {
 
 		do {
 			// travels right until a value is greater than the pivot element
-			while (comparables.get(i).compareTo(pivot) <= 0 && i <= j) {
+			while (comparables.get(i).compareTo(pivot) <= 0 && i < right) {
 				i++;
 			}
 
 			// travels left until a value is lesser than the pivot element
-			while (comparables.get(j).compareTo(pivot) >= 0 && j > i) {
+			while (comparables.get(j).compareTo(pivot) >= 0 && j > left) {
 				j--;
 			}
-
 			// swaps both found values not fitting into the order defined
 			// by the pivot element
-			ToolBox.swap(comparables, i, j);
+			if (i < j) {
+				ToolBox.swap(comparables, i, j);
+			}
 		} while (i < j);
-
+		
 		// is called after completion of the while loop to swap pivot (here at
 		// the right end) with the element where i and j met.
 		if (comparables.get(i).compareTo(pivot) > 0) {
