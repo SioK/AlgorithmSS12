@@ -8,8 +8,7 @@ import javax.swing.JComponent;
 
 /**
  * Shows the sorting in a JFrame via displaying the height of all array
- * elements. This class is used to synchronize the way how it shall be used by
- * any sorting Visualizer.
+ * elements. This class shalt be used by any sorting Visualizer.
  * 
  * @author François Dubois <siokdub@gmail.com>
  * @author Sebastian Morkisch <semox78@gmail.com>
@@ -25,7 +24,7 @@ public abstract class AbstractSorterCanvas extends JComponent {
 	private int time;
 
 	/**
-	 * Swaps two bars while sorting using Threads.
+	 * Shows the visualisation of two bars when swapping.
 	 * 
 	 * @param indexOne
 	 * @param indexTwo
@@ -78,7 +77,7 @@ public abstract class AbstractSorterCanvas extends JComponent {
 	}
 
 	/**
-	 * Draws a bars, its height defined by the int value.
+	 * Draws a bar, its height defined by the int value.
 	 * 
 	 * @param int index
 	 * @param int value
@@ -96,6 +95,11 @@ public abstract class AbstractSorterCanvas extends JComponent {
 				- value);
 	}
 
+	/**
+	 * sets/transmits the data to sort
+	 * 
+	 * @param comparables
+	 */
 	public void setData(List<Integer> comparables) {
 		this.comparables = comparables;
 	}

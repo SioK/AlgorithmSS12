@@ -14,7 +14,7 @@ import java.util.Random;
 
 public final class ToolBox {
 
-	public static int[] randArray(int pool, int size) {
+	public static int[] generateRandArray(int pool, int size) {
 		Random r = new Random();
 		int[] array = new int[size];
 		for (int i = 0; i < array.length; i++) {

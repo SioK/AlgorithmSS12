@@ -4,14 +4,13 @@ import java.util.List;
 
 /**
  * 
- * The interface IDataProvider is made for a later use in a graphical User
- * Interface. For example to run it in a JFileChoose or straight from the
- * command line.
+ * The interface IDataProvider gives basic methods to produce and provide data
+ * for sorting.
  * 
  * @author François Dubois <siokdub@gmail.com>
  * @author Sebastian Morkisch <semox78@gmail.com>
  * 
- * @param <T> 
+ * @param <T>
  */
 
 public interface IDataProvider<T> {
