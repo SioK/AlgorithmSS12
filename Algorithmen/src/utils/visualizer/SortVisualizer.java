@@ -1,7 +1,5 @@
 package utils.visualizer;
 
-import java.awt.Color;
-
 import interfaces.AbstractSorterCanvas;
 import interfaces.IDataProvider;
 
