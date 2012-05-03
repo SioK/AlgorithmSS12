@@ -8,6 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is made to load the prepared files..
+ * 
+ * @author François Dubois <siokdub@gmail.com>
+ * @author Sebastian Morkisch <semox78@gmail.com>
+ *
+ */
+
 public class FileReaderProvider implements IDataProvider<Integer> {
 
 	private final ArrayList<Integer> valuesList = new ArrayList<Integer>();
@@ -16,7 +24,6 @@ public class FileReaderProvider implements IDataProvider<Integer> {
 		try {
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
-
 			String zeile = "";
 			while (true) {
 				zeile = br.readLine();
@@ -30,7 +37,6 @@ public class FileReaderProvider implements IDataProvider<Integer> {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-
 	}
 
 	@Override
@@ -45,13 +51,11 @@ public class FileReaderProvider implements IDataProvider<Integer> {
 
 	@Override
 	public int getSize() {
-		// TODO Auto-generated method stub
 		return valuesList.size();
 	}
 
 	@Override
 	public int maxValueBound() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

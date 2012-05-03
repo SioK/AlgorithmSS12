@@ -22,6 +22,7 @@ public class BogoSort<T extends Comparable<T>> implements ISorter<T> {
 
 	@Override
 	public void sort(List<T> comparables) {
+		 this.comparables = comparables;
 		while (!isSorted(comparables)) {
 			for (int i = 0; i < comparables.size(); i++) {
 				int randPos = generator.nextInt(comparables.size() - 1);
@@ -33,8 +34,8 @@ public class BogoSort<T extends Comparable<T>> implements ISorter<T> {
 	}
 
 	private boolean isSorted(List<T> comparables) {
-		for (int i = 0; i <= this.comparables.size(); i++) {
-			if (this.comparables.get(i).compareTo(comparables.get(i - 1)) < 0) {
+		for (int i = 0; i <= this.comparables.size() -1; i++) {
+			if (this.comparables.get(i).compareTo(comparables.get(i +1 )) < 0) {
 				return false;
 			}
 		}
