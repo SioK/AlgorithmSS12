@@ -2,6 +2,15 @@ package visualsorter;
 
 import interfaces.AbstractSorterCanvas;
 
+/**
+ * 
+ * This class shows the way how Selectionsort works in the canvas.
+ * 
+ * @author François Dubois <siokdub@gmail.com>
+ * @author Sebastian Morkisch <semox78@gmail.com>
+ *
+ */
+
 public class SelectionSortCanvas extends AbstractSorterCanvas{
 
 	private static final long serialVersionUID = 1L;

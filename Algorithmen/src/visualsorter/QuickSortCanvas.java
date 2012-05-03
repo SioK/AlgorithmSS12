@@ -5,11 +5,17 @@ import java.awt.Graphics;
 
 import interfaces.AbstractSorterCanvas;
 
+/**
+ * 
+ * This class shows the way how Quicksort works in the canvas.
+ * 
+ * @author François Dubois <siokdub@gmail.com>
+ * @author Sebastian Morkisch <semox78@gmail.com>
+ *
+ */
+
 public class QuickSortCanvas extends AbstractSorterCanvas{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
