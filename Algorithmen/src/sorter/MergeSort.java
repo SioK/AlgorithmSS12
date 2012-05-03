@@ -5,6 +5,16 @@ import java.util.List;
 
 import interfaces.ISorter;
 
+/**
+ * 
+ * This sorting algo using the merge sort.
+ * 
+ * @author François Dubois <siokdub@gmail.com>
+ * @author Sebastian Morkisch <semox78@gmail.com>
+ *
+ * @param <T> while T must have implemented the Comparable Interface
+ */
+
 public class MergeSort<T extends Comparable<T>> implements ISorter<T> {
 
   private List<T> comparables;

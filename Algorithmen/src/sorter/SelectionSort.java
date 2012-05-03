@@ -8,9 +8,14 @@ import interfaces.ISorter;
 
 /**
  * 
- * @author Francois Dubois Matrikelnummer 769161 represents the selection
- *         algorithm
+ * This sorting algo using the selection sort.
+ * 
+ * @author François Dubois <siokdub@gmail.com>
+ * @author Sebastian Morkisch <semox78@gmail.com>
+ *
+ * @param <T> while T must have implemented the Comparable Interface
  */
+
 public class SelectionSort<T extends Comparable<T>> implements ISorter<T> {
 
 
