@@ -8,7 +8,8 @@ import javax.swing.JComponent;
 
 /**
  * Shows the sorting in a JFrame via displaying the height of all array
- * elements.
+ * elements. This class is used to synchronize the way how it shall be used by
+ * any sorting Visualizer.
  * 
  * @author François Dubois <siokdub@gmail.com>
  * @author Sebastian Morkisch <semox78@gmail.com>
